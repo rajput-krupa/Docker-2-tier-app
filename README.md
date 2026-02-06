@@ -3,7 +3,7 @@
 
 This project demonstrates a 2-tier web application architecture using Docker, where a Flask application and a MySQL database run in separate isolated containers. The application is built from a Git repository, connected using a custom Docker network, and uses persistent Docker volumes to ensure database data is not lost.
 
-To optimize performance and reduce image size, a multi-stage Dockerfile is used. The final Docker images are pushed to Docker Hub for easy access and deployment.
+To optimize performance and reduce image size, a multi-stage Dockerfile is used. The final Docker images are pushed to Docker Hub for easy access and deployment. Performed advanced image analysis with Docker Scout to secure and optimize project Docker images.
 
 ## 🔹 Step 1: Clone the Git Repository
 Git clone [Git Repository](https://github.com/LondheShubham153/two-tier-flask-app.git)
@@ -128,3 +128,22 @@ docker push kruparajput/two-tier-app:latest
 
 <img width="500" height="400" alt="Screenshot 2026-02-02 at 4 18 13 PM" src="https://github.com/user-attachments/assets/d8d1e7c3-8f78-4824-b8ae-2455d8a9e3c1" />
 
+## 🔹 Step 13: Advanced Image analysis with Docker Scout
+
+Analyze and inspect Docker images to ensure they are:
+
+- Secure: Detects vulnerabilities in OS packages or dependencies
+
+- Optimized: Highlights unnecessary layers, large files, and image bloat
+
+- Compliant: Provides insights for license and security compliance
+
+- Maintained: Checks if base images and dependencies are up-to-date
+
+```bash
+docker scout cves two-tier-app:latest
+```
+```bash
+docker scout report two-tier-app:latest
+```
+<img width="1000" height="1000" alt="Screenshot 2026-02-06 at 2 22 21 AM" src="https://github.com/user-attachments/assets/b32448fa-da37-4926-baeb-ceb57e590146" />
